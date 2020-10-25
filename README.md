@@ -48,11 +48,43 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain the difference between `Relational Databases` and `SQL`.
 
+A relational database is a collection of information that organizes data points with defined relationships for easy access. In the relational database model, the data structures -- including data tables, indexes and views -- remain separate from the physical storage, allowing administrators to edit the physical data storage without affecting the logical data structure.
+
+The data tables used in a relational database store information about the related objects. Each row holds a record with a unique identifier -- known as a key -- and each column contains the attributes of the data. Each record assigns a value to each feature, making relationships between data points easy to identify.
+
+The standard user and application program interface (API) of a relational database is the Structured Query Language (SQL). SQL statements are used both for interactive queries for information from a relational database and for gathering data for reports. Defined data integrity rules must be followed to ensure the relational database is accurate and accessible.
+
+Relational databases are beneficial to all types and sizes of organizations where related data points must be consistently managed and secured. For example, e-commerce businesses can use the relational model to process purchases and track inventory. The relational database is the most widely accepted database model.
+
+So: the RDBMS is the system, and SQL is the language used to interact with the system. In principle you could have an RDBMS that uses some other language for access, and in principle you could use SQL to interact with some other kind of database system, though in practice the two are closely coupled.
+
 2. Why do tables need a `primary key`?
+
+A primary key is a table column that serves a special purpose. Each database table needs a primary key because it ensures row-level accessibility. If you choose an appropriate primary key, you can specify a primary key value, which lets you query each table row individually and modify each row without altering other rows in the same table.
+
+A primary key is a key in a relational database that is unique for each record. It is a unique identifier, such as a driver license number, telephone number (including area code), or vehicle identification number (VIN). A relational database must always have one and only one primary key. Primary keys typically appear as columns in relational database tables.
 
 3. What is the name given to a table column that references the primary key on another table.
 
-4. What do we need in order to have a _many to many_ relationship between two tables.
+A foreign key is a column or group of columns in a relational database table that provides a link between data in two tables. It acts as a cross-reference between tables because it references the primary key of another table, thereby establishing a link between them.
+
+The foreign key constraint is used to prevent actions that would destroy links between tables.
+
+The foreign key constraint also prevents invalid data from being inserted into the foreign key column, because it has to be one of the values contained in the table it points to.
+
+4. What do we need in order to have a _many to many_ relationship between two tables?
+
+Multiple records in one table are related to multiple records in another table.
+
+In a many-to-many relationship, a row in table A can have many matching rows in table B, and vice versa.
+
+A many-to-many relationship could be thought of as two one-to-many relationships, linked by an intermediary table.
+
+The intermediary table is typically referred to as a “junction/join table” (also as a “cross-reference table”). This table is used to link the other two tables together. It does this by having two fields that reference the primary key of each of the other two tables.
+
+For example, if we want to track animals on a farm as well, we must explore the many-to-many relationship. A farm has multiple animals, and multiple of each type of animal is present at multiple different farms.
+
+To model this relationship, we need to introduce an intermediary table that holds foreign keys that reference the primary key on the related tables. We now have a farms, animals, and farm_animals table.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
